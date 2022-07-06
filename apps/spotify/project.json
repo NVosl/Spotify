@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/spot/src",
+  "sourceRoot": "apps/spotify/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,14 +9,14 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/spot",
-        "index": "apps/spot/src/index.html",
+        "outputPath": "dist/apps/spotify",
+        "index": "apps/spotify/src/index.html",
         "baseHref": "/",
-        "main": "apps/spot/src/main.tsx",
-        "polyfills": "apps/spot/src/polyfills.ts",
-        "tsConfig": "apps/spot/tsconfig.app.json",
-        "assets": ["apps/spot/src/favicon.ico", "apps/spot/src/assets"],
-        "styles": ["apps/spot/src/styles.scss"],
+        "main": "apps/spotify/src/main.js",
+        "polyfills": "apps/spotify/src/polyfills.js",
+        "tsConfig": "apps/spotify/tsconfig.app.json",
+        "assets": ["apps/spotify/src/favicon.ico", "apps/spotify/src/assets"],
+        "styles": ["apps/spotify/src/styles.css"],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
       },
@@ -30,8 +30,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/spot/src/environments/environment.ts",
-              "with": "apps/spot/src/environments/environment.prod.ts"
+              "replace": "apps/spotify/src/environments/environment.js",
+              "with": "apps/spotify/src/environments/environment.prod.js"
             }
           ],
           "optimization": true,
@@ -47,15 +47,15 @@
       "executor": "@nrwl/web:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "spot:build",
+        "buildTarget": "spotify:build",
         "hmr": true
       },
       "configurations": {
         "development": {
-          "buildTarget": "spot:build:development"
+          "buildTarget": "spotify:build:development"
         },
         "production": {
-          "buildTarget": "spot:build:production",
+          "buildTarget": "spotify:build:production",
           "hmr": false
         }
       }
@@ -64,14 +64,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/spot/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/spotify/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/spot"],
+      "outputs": ["coverage/apps/spotify"],
       "options": {
-        "jestConfig": "apps/spot/jest.config.ts",
+        "jestConfig": "apps/spotify/jest.config.js",
         "passWithNoTests": true
       }
     }

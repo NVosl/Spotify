@@ -2,7 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "spot": "apps/spot",
-    "spot-e2e": "apps/spot-e2e"
+    "spotify": "apps/spotify",
+    "spotify-e2e": "apps/spotify-e2e"
   }
 }

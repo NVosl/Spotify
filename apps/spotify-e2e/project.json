@@ -1,17 +1,17 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/spot-e2e/src",
+  "sourceRoot": "apps/spotify-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/spot-e2e/cypress.json",
-        "devServerTarget": "spot:serve:development"
+        "cypressConfig": "apps/spotify-e2e/cypress.json",
+        "devServerTarget": "spotify:serve:development"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "spot:serve:production"
+          "devServerTarget": "spotify:serve:production"
         }
       }
     },
@@ -19,10 +19,10 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/spot-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/spotify-e2e/**/*.js"]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["spot"]
+  "implicitDependencies": ["spotify"]
 }
