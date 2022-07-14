@@ -1,19 +1,27 @@
+import styles from './app.module.scss';
 
-export function App() {
-  const header = 'Spotify';
-  const body = 'This is a Spotify app';
-  const year = new Date().getFullYear();
+
+const ListItem = ({ song }) => {
+  return <li> {song} </li>
+};
+
+const SongList = ({ items }) => {
+  return (
+    <ul>{items.map((el, i) => <ListItem song={el} />)}</ul>
+  )
+};
+
+const App = () => {
+  const songList = [
+    'Sweet Child of Mine',
+    'Enter Sandman',
+    'Angel of the Morning'
+  ];
+
   return (
     <>
-      <header>
-        <h1>{header}</h1>
-      </header>
-      <article>
-        {body}
-      </article>
-      <footer>
-        <p>Copyright &copy; {year}</p>
-      </footer>
+      <h1>Song List</h1>
+      <SongList items={songList} />
     </>
   );
 }
