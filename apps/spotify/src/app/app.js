@@ -7,7 +7,7 @@ const ListItem = ({ song }) => {
 
 const SongList = ({ items }) => {
   return (
-    <ul>{items.map((el, i) => <ListItem song={el} />)}</ul>
+    <ul>{items.map((el, i) => <ListItem song={el} key={i} />)}</ul>
   )
 };
 
